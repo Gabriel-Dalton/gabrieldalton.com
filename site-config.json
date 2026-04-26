@@ -1,0 +1,26 @@
+{
+  "name": "kgnews",
+  "domain": "gabrieldalton.com",
+  "url": "https://gabrieldalton.com",
+  "homePage": {
+    "id": 148496
+  },
+  "appearance": {
+    "schema": "standard",
+    "headerBgColor": "#eaeaea",
+    "headerTextColor": "#333333",
+    "bodyBgColor": "#ffffff",
+    "textColor": "#333333",
+    "footerBgColor": "#2e2e2d",
+    "footerTextColor": "#ffffff"
+  },
+  "scripts": {
+    "robots": "User-agent: *\nAllow: *\nSitemap: {domain}/sitemap.xml\n",
+    "disableCookiesConsent": "1",
+    "head": "<!-- Accessibility AI Remediation powered by AccessibilityChecker.org -->\n<script>\n window.ac_ai_js_client_settings = {\n  domain_hash: \"16f603d0bd8db23f572795f96d025630\",\n };\n \n (function() {\n  var script = document.createElement(\"script\");\n  script.src = \"https://www.accessibilitychecker.org/ai-script/ac-fixes-client.min.js?v=\" + Date.now();\n  script.async = true;\n  document.head.appendChild(script);\n })();\n</script>"
+  },
+  "elements": {
+    "copyrights": "&copy; Copyright {year} {domain}. All Rights Reserved.",
+    "favicon": "https://cdn.dashnexpages.net/fe2fa7c36a7e09f9b11035218d2d532f.png"
+  }
+}

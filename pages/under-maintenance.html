@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Maintenance | Gabriel Dalton</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            height: 100vh;
+            width: 100vw;
+            background: #181818;
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .maintenance-outer {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .maintenance-container {
+            text-align: center;
+            padding: 2.5rem 2rem 2.5rem 2rem;
+            max-width: 500px;
+            width: 100%;
+            background: #232323;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2);
+            border: 1.5px solid #2a2a2a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 2rem;
+            margin-top: 0;
+        }
+        .icon path {
+            stroke: #FFDB6E;
+            stroke-width: 2.5;
+            fill: none;
+        }
+        h1 {
+            color: #FFDB6E;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+            margin-top: 0;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            margin-top: 0;
+        }
+        .loader {
+            width: 100%;
+            max-width: 340px;
+            height: 4px;
+            background: #2a2a2a;
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 2rem 0 2.5rem 0;
+            position: relative;
+        }
+        .loader::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            background: #FFDB6E;
+            animation: power 1.5s ease-in-out infinite;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #FFDB6E;
+        }
+        @keyframes power {
+            0% {
+                left: -40%;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+        .contact-link {
+            color: #FFDB6E;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .contact-link:hover {
+            color: #ffd700;
+        }
+        @media (max-width: 600px) {
+            .maintenance-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .icon {
+                width: 40px;
+                height: 40px;
+                margin-bottom: 1.2rem;
+            }
+        }
+    </style>
+
+<link rel="icon" href="https://cdn.dashnexpages.net/fe2fa7c36a7e09f9b11035218d2d532f.png">
+<!-- Accessibility AI Remediation powered by AccessibilityChecker.org -->
+<script>
+ window.ac_ai_js_client_settings = {
+  domain_hash: "16f603d0bd8db23f572795f96d025630",
+ };
+ 
+ (function() {
+  var script = document.createElement("script");
+  script.src = "https://www.accessibilitychecker.org/ai-script/ac-fixes-client.min.js?v=" + Date.now();
+  script.async = true;
+  document.head.appendChild(script);
+ })();
+</script>
+</head>
+<body>
+
+    <div class="maintenance-outer">
+        <div class="maintenance-container">
+            <svg class="icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-label="Power icon">
+                <circle cx="24" cy="24" r="16" stroke="#FFDB6E" stroke-width="2.5" fill="none"></circle>
+                <line x1="24" y1="13" x2="24" y2="25" stroke="#FFDB6E" stroke-width="2.5" stroke-linecap="round"></line>
+            </svg>
+            <h1>Site Maintenance</h1>
+            <p>We're currently updating our website to serve you better.</p>
+            <div class="loader"></div>
+            <p style="margin-bottom:0;">For assistance, contact us at<br>
+            <a href="mailto:me@gabrieldalton.com" class="contact-link">me@gabrieldalton.com</a></p>
+        </div>
+    </div>
+
+ 
+</body>
+</html>
