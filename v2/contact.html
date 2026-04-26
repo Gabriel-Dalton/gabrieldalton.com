@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact — Gabriel Dalton</title>
+<meta name="description" content="Get in touch with Gabriel Dalton — for speaking inquiries, project work, press, and partnerships.">
+<meta name="author" content="Gabriel Dalton">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabrieldalton.com/contact">
+<meta property="og:title" content="Contact — Gabriel Dalton">
+<meta property="og:description" content="Get in touch with Gabriel Dalton.">
+<meta property="og:image" content="img/opengraph.webp">
+
+<meta name="theme-color" content="#0a3522">
+<link rel="icon" href="img/favicon.webp" type="image/webp">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=Hanken+Grotesk:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">G</span><span>Gabriel Dalton</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="writing.html">Writing</a>
+      <a class="nav-link" href="speaking.html">Speaking</a>
+      <a class="nav-link" href="references.html">References</a>
+      <a class="btn btn-primary btn-sm" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="container hero">
+    <div style="max-width: 44rem;">
+      <span class="eyebrow">Contact</span>
+      <h1 class="h-display" style="margin-top: 1rem;">Get in touch.</h1>
+      <p class="lede lede-wide" style="margin-top: 1.5rem;">All correspondence runs through this page — speaking inquiries, project enquiries, press, partnerships. I read everything, and I reply within a few business days.</p>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="contact-page-grid">
+
+      <!-- ============== FORM ============== -->
+      <form id="contactForm" class="contact-card-form" method="POST" action="https://formsubmit.co/fe194e95c822109c2887c9406556d6c7" novalidate>
+
+        <div class="form-head">
+          <span class="eyebrow">Send a message</span>
+          <h2 class="h-2" style="margin-top: 0.5rem;">Tell me what you're working on.</h2>
+        </div>
+
+        <!-- Topic selector -->
+        <div class="form-field">
+          <label for="cf-topic">What is this about?</label>
+          <div class="topic-pills" role="radiogroup" aria-label="Topic">
+            <label class="topic-pill"><input type="radio" name="topic" value="Speaking inquiry" required>Speaking inquiry</label>
+            <label class="topic-pill"><input type="radio" name="topic" value="Project / consulting" required>Project / consulting</label>
+            <label class="topic-pill"><input type="radio" name="topic" value="Press / media" required>Press / media</label>
+            <label class="topic-pill"><input type="radio" name="topic" value="Nonprofit grants" required>Nonprofit grants</label>
+            <label class="topic-pill"><input type="radio" name="topic" value="Just saying hi" required>Just saying hi</label>
+          </div>
+        </div>
+
+        <!-- Name + email row -->
+        <div class="form-row">
+          <div class="form-field">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" name="fullname" autocomplete="name" required maxlength="120" placeholder="Jane Doe">
+            <span class="form-hint" data-error="cf-name"></span>
+          </div>
+          <div class="form-field email-field">
+            <label for="cf-email">Email address</label>
+            <input id="cf-email" type="email" name="email" autocomplete="email" required maxlength="180" placeholder="you@example.com" spellcheck="false" autocapitalize="none">
+            <ul id="cf-email-suggest" class="email-suggest" role="listbox" hidden></ul>
+            <span class="form-hint" data-error="cf-email"></span>
+          </div>
+        </div>
+
+        <!-- Org (optional) -->
+        <div class="form-field">
+          <label for="cf-org">Organization <span class="optional">(optional)</span></label>
+          <input id="cf-org" type="text" name="organization" autocomplete="organization" maxlength="120" placeholder="Where you're writing from">
+        </div>
+
+        <!-- Message -->
+        <div class="form-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="6" required minlength="20" maxlength="4000" placeholder="A few sentences on what you're working on, what you're hoping for, and any dates or constraints."></textarea>
+          <div class="form-meta-row">
+            <span class="form-hint" data-error="cf-message"></span>
+            <span class="char-count" id="cf-charcount">0 / 4000</span>
+          </div>
+        </div>
+
+        <!-- ============= SECURITY (hidden / non-visual) ============= -->
+        <!-- Honeypot: real users won't fill this; bots usually do. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="cf-website">Website (leave blank)</label>
+          <input id="cf-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
+
+        <!-- Time-trap: page-load timestamp; rejected if submitted under threshold. -->
+        <input type="hidden" name="cf_loaded" id="cf_loaded">
+
+        <!-- One-time client token: simple integrity check (page-scoped, not a real CSRF token). -->
+        <input type="hidden" name="cf_token" id="cf_token">
+
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="gabrieldalton.com — new contact">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://gabrieldalton.com/message-sent">
+
+        <!-- Consent + actions -->
+        <label class="form-consent">
+          <input type="checkbox" id="cf-consent" required>
+          <span>I understand my message will be sent over an encrypted form relay and a copy will reach Gabriel only.</span>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="cf-submit" disabled>
+            <span class="btn-label">Send message</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+          <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+      <!-- ============== ASIDE ============== -->
+      <aside class="contact-aside">
+        <div class="aside-card">
+          <span class="eyebrow">Response time</span>
+          <h3 class="h-3" style="margin-top: 0.5rem;">Within 2–3 business days.</h3>
+          <p class="muted" style="margin-top: 0.4rem;">I read every message personally. For speaking engagements, please include the event date, audience, and approximate honorarium budget if known.</p>
+        </div>
+
+        <div class="aside-card">
+          <span class="eyebrow">What this is for</span>
+          <ul class="aside-list">
+            <li><strong>Speaking</strong> — TEDx, conferences, classrooms, corporate teams.</li>
+            <li><strong>Project work</strong> — selected nonprofit, founder-led, or policy-adjacent engagements.</li>
+            <li><strong>Press &amp; media</strong> — interviews, podcasts, articles.</li>
+            <li><strong>Partnerships</strong> — grants, civic projects, sustainability initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="aside-card aside-card--security">
+          <span class="eyebrow">Privacy &amp; security</span>
+          <ul class="aside-list aside-list--small">
+            <li><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> End-to-end TLS over the form relay.</li>
+            <li><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Honeypot &amp; timing-trap spam protection.</li>
+            <li><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Local rate-limit (3 messages / hour).</li>
+            <li><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Direct email is not exposed publicly.</li>
+            <li><svg class="check-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> No third-party trackers on this page.</li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer-grid">
+      <div class="footer-block">
+        <a class="brand" href="index.html" style="margin-bottom: 0.85rem;">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>Gabriel Dalton</span>
+        </a>
+        <p style="max-width: 28ch; line-height: 1.55;">Founder, Oasis of Change, Inc. Vancouver, BC.</p>
+      </div>
+      <div class="footer-block">
+        <h5>Inside</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="headshots.html">Press headshots</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h5>Elsewhere</h5>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/photoswithgabe/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://gabrieldalton.medium.com/" target="_blank" rel="noopener">Medium</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="contact.html">Contact form</a></li>
+          <li><span class="muted">Vancouver · British Columbia</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Gabriel Dalton. All rights reserved.</span>
+      <span>Vancouver · British Columbia · Canada</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>

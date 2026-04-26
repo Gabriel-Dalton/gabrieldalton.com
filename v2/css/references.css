@@ -1,0 +1,82 @@
+/* references-page-only styles (drops in on top of main.css) */
+
+/* PDF modal */
+.pdf-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.pdf-modal[hidden] { display: none; }
+.pdf-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6, 32, 25, 0.70);
+}
+.pdf-shell {
+  position: relative;
+  width: min(100%, 1024px);
+  height: min(85vh, 900px);
+  background: var(--white);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(6, 32, 25, 0.30);
+}
+.pdf-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+}
+.pdf-titles { min-width: 0; flex: 1; }
+.pdf-titles h4 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pdf-titles p {
+  margin: 0.15rem 0 0 0;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pdf-actions { display: flex; gap: 0.5rem; flex-shrink: 0; }
+.pdf-actions a,
+.pdf-actions button {
+  border: 1px solid var(--rule);
+  background: var(--white);
+  padding: 0.5rem 0.95rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: var(--r-sm);
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.pdf-actions a:hover,
+.pdf-actions button:hover {
+  background: var(--green-900);
+  color: var(--white);
+  border-color: var(--green-900);
+}
+#pdfFrame { flex: 1; width: 100%; border: 0; background: var(--paper); }
+
+body.modal-open { overflow: hidden; }

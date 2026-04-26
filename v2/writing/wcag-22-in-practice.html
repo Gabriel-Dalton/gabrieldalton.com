@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCAG 2.2 in practice — a working list — Gabriel Dalton</title>
+<meta name="description" content="An opinionated guide to the WCAG 2.2 success criteria most often missed in shipping product, and how to make them part of your default review.">
+<meta name="author" content="Gabriel Dalton">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gabrieldalton.com/writing/wcag-22-in-practice">
+<meta property="og:title" content="WCAG 2.2 in practice — a working list.">
+<meta property="og:image" content="../img/opengraph.webp">
+<meta name="theme-color" content="#0a3522">
+<link rel="icon" href="../img/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=Hanken+Grotesk:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">G</span><span>Gabriel Dalton</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="../writing.html">Writing</a>
+      <a class="nav-link" href="../speaking.html">Speaking</a>
+      <a class="nav-link" href="../references.html">References</a>
+      <a class="btn btn-secondary btn-sm" href="../contact.html">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container section">
+  <article class="post-article">
+    <header class="post-header">
+      <div class="post-meta">
+        <span>Web Accessibility</span>
+        <span><time datetime="2026-01-10">10 January 2026</time></span>
+        <span>4 min read</span>
+      </div>
+      <h1>WCAG 2.2 in practice — a working list.</h1>
+      <p class="lede">An opinionated guide to the success criteria most often missed in shipping product, and how to make them part of your default review.</p>
+    </header>
+
+    <div class="post-content">
+      <p>WCAG 2.2 added nine new success criteria. Most teams I work with respect the spec on paper and miss it in production — usually on the same handful of items. Here's the short list of the ones that catch teams out, with what to actually look for.</p>
+
+      <h2>1. Focus Not Obscured (2.4.11, AA)</h2>
+      <p>If a sticky header, cookie banner, or chat widget covers the focused element when a keyboard user tabs to it, you fail. Sticky elements are usually the culprit. Test by tab-ing to a footer link and watching where focus actually lands; if your sticky bar is hiding it, you owe an offset.</p>
+
+      <h2>2. Dragging Movements (2.5.7, AA)</h2>
+      <p>Anything you can do by dragging — sliders, kanban cards, signature pads — must also work without dragging. A "+/-" pair next to a slider, an "edit position" menu next to a card. Easier than it sounds; almost always missed.</p>
+
+      <h2>3. Target Size (Minimum) (2.5.8, AA)</h2>
+      <p>Interactive targets need to be at least 24×24 CSS pixels (with a few exemptions). Pagination dots, social icons stacked tightly, and tag chips are the usual offenders. If your designer hands you 16×16 social icons, push back.</p>
+
+      <h2>4. Consistent Help (3.2.6, A)</h2>
+      <p>If "Contact us" appears in three different places across the site, it must appear in the same relative location on every page. If your help link moves between header and footer depending on template, fix it.</p>
+
+      <h2>5. Redundant Entry (3.3.7, A)</h2>
+      <p>Don't make people retype information they already gave you in the same flow. Carry email forward into checkout. Carry billing address into shipping. This one is half UX and half accessibility — it lands hardest on users with cognitive disabilities.</p>
+
+      <h2>6. Accessible Authentication (3.3.8 / 3.3.9)</h2>
+      <p>Don't force cognitive function tests as the only way to log in. Solve-this-puzzle CAPTCHAs, "type the third character of your password" — out. Provide a path through a copy-paste, a passkey, or an email link.</p>
+
+      <h2>How to make this default.</h2>
+      <ul>
+        <li><strong>Add these six to your PR template.</strong> A literal checklist.</li>
+        <li><strong>Run automated tools, but trust them lightly.</strong> Axe, Lighthouse, Pa11y catch maybe 30% of issues. The rest is a tab-and-screen-reader pass.</li>
+        <li><strong>Bring real users in.</strong> One hour with a screen-reader user every quarter will teach a team more than every audit you'll ever buy.</li>
+      </ul>
+
+      <blockquote>Accessibility is a team practice, not an audit. Audits ship reports. Practices ship products.</blockquote>
+
+      <p>If you want to compare notes on running WCAG 2.2 reviews at scale — or you'd like a hand auditing a real product — that's part of what I do at <a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">AccessibilityChecker.org</a> and through Oasis of Change. <a href="../contact.html">Get in touch</a>.</p>
+    </div>
+
+    <footer class="post-footer">
+      <a class="link-inline" href="../writing.html"><span aria-hidden="true">←</span> All writing</a>
+      <span class="meta">Filed under <a href="../writing.html">Web Accessibility</a></span>
+    </footer>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Gabriel Dalton. All rights reserved.</span>
+      <span><a href="../index.html">gabrieldalton.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>References &amp; Resources — Gabriel Dalton</title>
+<meta name="description" content="Letters of recommendation and recognition, written quotes, citations, articles, and external links — a working bibliography for Gabriel Dalton.">
+<meta name="author" content="Gabriel Dalton">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabrieldalton.com/references">
+<meta property="og:title" content="References &amp; Resources — Gabriel Dalton">
+<meta property="og:description" content="Letters, quotes, citations, and external links — a working bibliography.">
+<meta property="og:image" content="img/opengraph.webp">
+
+<meta name="theme-color" content="#0a3522">
+<link rel="icon" href="img/favicon.webp" type="image/webp">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..700&family=Hanken+Grotesk:wght@400;450;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/references.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="container masthead-inner">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">G</span><span>Gabriel Dalton</span></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <a class="nav-link" href="writing.html">Writing</a>
+      <a class="nav-link" href="speaking.html">Speaking</a>
+      <a class="nav-link" href="references.html">References</a>
+      <a class="btn btn-secondary btn-sm" href="contact.html">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="container hero">
+    <div style="max-width: 44rem;">
+      <span class="eyebrow">References &amp; Resources</span>
+      <h1 class="h-display" style="margin-top: 1rem;">Letters, quotes, citations, links.</h1>
+      <p class="lede lede-wide" style="margin-top: 1.5rem;">A working archive — letters of recommendation and recognition, public quotes, press citations, and external resources from organizations I've worked with. Use the search and filters to find what you're after.</p>
+    </div>
+  </section>
+
+  <section class="container section">
+    <div class="search-box" style="margin-bottom: 1.25rem;">
+      <input id="resourceSearch" type="search" placeholder="Search references and resources…" data-search-target="resources" autocomplete="off" aria-label="Search resources">
+    </div>
+
+    <div class="filter-row" role="tablist" aria-label="Filter resources by category">
+      <button class="filter-chip is-active" data-filter-target="resources" data-filter="all">All</button>
+      <button class="filter-chip" data-filter-target="resources" data-filter="recommendation">Recommendations</button>
+      <button class="filter-chip" data-filter-target="resources" data-filter="recognition">Recognition</button>
+      <button class="filter-chip" data-filter-target="resources" data-filter="press">Press</button>
+      <button class="filter-chip" data-filter-target="resources" data-filter="quote">Public Quotes</button>
+      <button class="filter-chip" data-filter-target="resources" data-filter="link">External Links</button>
+    </div>
+
+    <div class="resources-grid" id="resourcesGrid"></div>
+
+    <p id="resourcesEmpty" class="muted text-center" style="display:none; margin-top: 2.5rem;">No resources match your search.</p>
+  </section>
+
+  <section class="container section">
+    <div class="cta-band">
+      <div>
+        <h2>Need more references?</h2>
+        <p>I'm happy to provide direct introductions to former colleagues, project leads, and grant program officers. Just ask.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="contact.html">Email me</a>
+        <a class="btn btn-secondary" href="index.html">Back to main site</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- PDF MODAL -->
+<div id="modal" class="pdf-modal" hidden>
+  <div class="pdf-overlay" data-close></div>
+  <div class="pdf-shell">
+    <div class="pdf-bar">
+      <div class="pdf-titles">
+        <h4 id="modalTitle"></h4>
+        <p id="modalSubtitle"></p>
+      </div>
+      <div class="pdf-actions">
+        <a id="modalDownload" href="#" target="_blank" rel="noopener">Open ↗</a>
+        <button type="button" data-close>Close</button>
+      </div>
+    </div>
+    <iframe id="pdfFrame" title="PDF viewer" loading="lazy"></iframe>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer-grid">
+      <div class="footer-block">
+        <a class="brand" href="index.html" style="margin-bottom: 0.85rem;">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>Gabriel Dalton</span>
+        </a>
+        <p style="max-width: 28ch; line-height: 1.55;">Founder, Oasis of Change, Inc. Vancouver, BC.</p>
+      </div>
+      <div class="footer-block">
+        <h5>Inside</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="writing.html">Writing</a></li>
+          <li><a href="speaking.html">Speaking</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="headshots.html">Press headshots</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h5>Elsewhere</h5>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/photoswithgabe/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://gabrieldalton.medium.com/" target="_blank" rel="noopener">Medium</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="contact.html">Send a message</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Gabriel Dalton. All rights reserved.</span>
+      <span>Vancouver · British Columbia · Canada</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/references.js"></script>
+</body>
+</html>

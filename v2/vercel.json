@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/freewebsite", "destination": "https://freecourse.oasisofchange.org/", "permanent": true },
+    { "source": "/translink", "destination": "https://gabrieldalton.medium.com/case-study-sustainable-web-practices-for-translink-ca-8e89a49f9f07", "permanent": true },
+    { "source": "/newsletter", "destination": "https://gabrieldalton.substack.com/", "permanent": true },
+    { "source": "/vote", "destination": "https://survey.vancouver.ca/s3/awards-of-excellence-2025", "permanent": true },
+    { "source": "/howtovote", "destination": "https://gabrieldalton.medium.com/how-to-nominate-gabriel-dalton-for-vancouvers-impact-in-innovation-award-e981d2321926", "permanent": true },
+    { "source": "/tks", "destination": "https://gabrieldalton.medium.com/the-knowledge-society-tks-review-vancouver-irl-6d7fbb42284f", "permanent": true },
+    { "source": "/yearly", "destination": "https://gabrieldalton.substack.com/t/yearly-updates", "permanent": true },
+    { "source": "/monthly", "destination": "https://gabrieldalton.substack.com/t/monthly-updates", "permanent": true },
+    { "source": "/vsb", "destination": "https://www.vsb.bc.ca/city-of-vancouver-honours-digital-sustainability-innovation-led-by-vancouver-student.84832", "permanent": true },
+
+    { "source": "/recommendations", "destination": "/references", "permanent": true },
+    { "source": "/resources", "destination": "/references", "permanent": true },
+    { "source": "/blog", "destination": "/writing", "permanent": true },
+    { "source": "/posts", "destination": "/writing", "permanent": true },
+    { "source": "/talk", "destination": "/speaking", "permanent": true },
+    { "source": "/talks", "destination": "/speaking", "permanent": true },
+    { "source": "/say-hi", "destination": "/contact", "permanent": true },
+    { "source": "/email", "destination": "/contact", "permanent": true },
+    { "source": "/book", "destination": "/contact?topic=speaking", "permanent": true },
+    { "source": "/inquire", "destination": "/contact?topic=speaking", "permanent": true },
+
+    { "source": "/letter-of-recognition-patty-hajdu-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recognition_Patty_Hajdu.pdf", "permanent": true },
+    { "source": "/letter-of-recognition-spencer-chandra-hebert-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recognition_Spencer_Chandra_Hebert.pdf", "permanent": true },
+    { "source": "/letter-of-recommendation-farooq-khan-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf", "permanent": true }
+  ]
+}
