@@ -186,6 +186,38 @@ img, svg { display: block; max-width: 100%; }
   padding: 4px 10px;
   border-radius: 999px;
 }
+.quote-card {
+  cursor: default;
+}
+.card-quote {
+  margin: 12px 0 0 0;
+  color: #334155;
+  font-size: 0.95rem;
+}
+.media-card {
+  cursor: default;
+}
+.card-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.card-link.secondary {
+  background: #f1f5f9;
+  color: #0f172a;
+}
 
 .contact {
   padding: 48px 24px;
