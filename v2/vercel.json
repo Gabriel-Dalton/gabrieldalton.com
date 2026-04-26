@@ -12,6 +12,8 @@
     { "source": "/yearly", "destination": "https://gabrieldalton.substack.com/t/yearly-updates", "permanent": true },
     { "source": "/monthly", "destination": "https://gabrieldalton.substack.com/t/monthly-updates", "permanent": true },
     { "source": "/vsb", "destination": "https://www.vsb.bc.ca/city-of-vancouver-honours-digital-sustainability-innovation-led-by-vancouver-student.84832", "permanent": true },
+    { "source": "/tedx", "destination": "https://www.youtube.com/watch?v=9L3bjj3GkSI", "permanent": true },
+    { "source": "/ted", "destination": "https://www.youtube.com/watch?v=9L3bjj3GkSI", "permanent": true },
 
     { "source": "/recommendations", "destination": "/references", "permanent": true },
     { "source": "/resources", "destination": "/references", "permanent": true },

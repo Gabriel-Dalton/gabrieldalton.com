@@ -1497,3 +1497,91 @@ a.card:hover, .card.card-link:hover {
   flex-shrink: 0;
   margin-top: 0.2rem;
 }
+
+/* ============================================================
+   biography section (homepage)
+   ============================================================ */
+.bio-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  grid-template-areas:
+    "head body"
+    "callout body"
+    "stats stats";
+  gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.bio-head    { grid-area: head; }
+.bio-body    { grid-area: body; max-width: 60ch; }
+.bio-callout { grid-area: callout; }
+.bio-stats   { grid-area: stats; margin-top: clamp(1rem, 2vw, 2rem); }
+@media (max-width: 880px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "body"
+      "callout"
+      "stats";
+  }
+}
+
+.bio-callout {
+  background: var(--white);
+  border: 1px solid var(--green-100);
+  border-left: 3px solid var(--green-700);
+  border-radius: var(--r-lg);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+.bio-callout-tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-weight: 500;
+}
+.bio-callout-quote {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-weight: 500;
+}
+.bio-callout-quote strong { color: var(--green-900); font-weight: 600; }
+
+/* ============================================================
+   eyebrow — TEDx red variant
+   ============================================================ */
+.eyebrow--tedx { color: #e62b1e; }
+.eyebrow--tedx::before { background: #e62b1e; }
+
+/* ============================================================
+   masthead — explicit high-contrast Contact button
+   the masthead Contact button is btn-primary across all pages.
+   .nav-cta enforces white text on green-900 with extra defensive
+   specificity in case any inherited rule tries to override.
+   ============================================================ */
+.primary-nav .nav-cta,
+.primary-nav a.btn.btn-primary {
+  background: var(--green-900);
+  color: var(--white);
+  border: 1px solid var(--green-900);
+  font-weight: 600;
+}
+.primary-nav .nav-cta:hover,
+.primary-nav a.btn.btn-primary:hover {
+  background: var(--green-800);
+  border-color: var(--green-800);
+  color: var(--white);
+}
+
+/* slightly bolder default for all buttons — improves perceived contrast */
+.btn { font-weight: 550; }
+.btn-primary { font-weight: 600; }
