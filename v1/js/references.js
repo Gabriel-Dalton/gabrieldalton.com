@@ -5,27 +5,27 @@
     {
       name: 'Adrien de Malherbe',
       org: 'Managing Director, MA in Capital Markets & Securities — Investment Banking',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recommendation_Adrien_de_Malherbe.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recommendation_Adrien_de_Malherbe.pdf'
     },
     {
       name: 'Farooq Khan',
       org: 'Founder, ViRA360',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf'
     },
     {
       name: 'Jack Wood',
       org: "Financial Assistant, St. Paul's Anglican Church",
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recommendation_Jack_Wood.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recommendation_Jack_Wood.pdf'
     },
     {
       name: 'Jordan Mittler',
       org: 'Founder, Mittler Senior Technology',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recommendation_Jordan_Mittler.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recommendation_Jordan_Mittler.pdf'
     },
     {
       name: 'Sara Ciantar',
       org: "Office Administrator, St. Paul's Anglican Church",
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recommendation_Sara_Ciantar.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recommendation_Sara_Ciantar.pdf'
     }
   ];
 
@@ -33,17 +33,17 @@
     {
       name: 'Hon. Patty Hajdu',
       org: 'Member of Parliament, Government of Canada',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recognition_Patty_Hajdu.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recognition_Patty_Hajdu.pdf'
     },
     {
       name: 'Hon. Spencer Chandra Herbert',
       org: 'MLA, Province of British Columbia',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Letter_of_Recognition_Spencer_Chandra_Hebert.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Letter_of_Recognition_Spencer_Chandra_Hebert.pdf'
     },
     {
       name: 'Stanley Park Ecology Society',
       org: 'Certificate of Appreciation',
-      file: 'https://assets.gabrieldalton.com/files/Gabriel_Dalton_Certificate_of_Appreciation_SPES.pdf'
+      file: 'https://assets.gabrieldalton.com/Gabriel_Dalton_Certificate_of_Appreciation_SPES.pdf'
     }
   ];
 
