@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gabriel Dalton — References</title>
+<meta name="description" content="Letters of recommendation, recognition, and certificates of appreciation for Gabriel Dalton.">
+<meta name="author" content="Gabriel Dalton">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gabrieldalton.com/references.html">
+<meta property="og:title" content="Gabriel Dalton — References">
+<meta property="og:description" content="Letters of recommendation, recognition, and certificates of appreciation for Gabriel Dalton.">
+<meta property="og:image" content="/img/opengraph.webp">
+
+<link rel="icon" href="/img/favicon.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/references.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">G</span>
+      <div class="brand-text">
+        <h1>Gabriel Dalton</h1>
+        <p>Recommendations &amp; Recognition</p>
+      </div>
+    </div>
+    <nav class="primary-nav" aria-label="Primary">
+      <a href="#letters">Letters</a>
+      <a href="#contact">Contact</a>
+      <a href="/" class="cta">Main Website</a>
+    </nav>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="container">
+    <h2>Trusted by community leaders &amp; organizations</h2>
+    <p>Browse verified letters of recommendation, recognition, and certificates. Use the search to quickly find a person or organization.</p>
+    <label class="search">
+      <input id="searchInput" type="text" placeholder="Search by name or organization…" autocomplete="off">
+    </label>
+  </div>
+</section>
+
+<section id="letters" class="container letters">
+  <div class="section-head">
+    <h3>Letters</h3>
+    <p>Click a card to view the embedded PDF.</p>
+  </div>
+
+  <h4 class="group-title">Letters of Recommendation</h4>
+  <div id="recommendationsGrid" class="grid"></div>
+
+  <h4 class="group-title">Letters of Recognition &amp; Appreciation</h4>
+  <div id="recognitionGrid" class="grid"></div>
+</section>
+
+<section id="contact" class="container contact">
+  <div class="contact-row">
+    <div class="contact-copy">
+      <h3>Work with me</h3>
+      <p>I help nonprofits and businesses build fast, accessible, and energy-efficient websites. Let's talk.</p>
+    </div>
+    <div class="contact-card">
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:me@gabrieldalton.com">me@gabrieldalton.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener">/in/gabrieldalton</a></li>
+        <li><strong>Website:</strong> <a href="/">gabrieldalton.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copyright">© <span id="year"></span> Gabriel Dalton. All rights reserved.</p>
+</section>
+
+<div id="modal" class="pdf-modal" hidden>
+  <div class="pdf-overlay" data-close></div>
+  <div class="pdf-shell">
+    <div class="pdf-bar">
+      <div class="pdf-titles">
+        <h4 id="modalTitle"></h4>
+        <p id="modalSubtitle"></p>
+      </div>
+      <div class="pdf-actions">
+        <a id="modalDownload" href="#" target="_blank" rel="noopener">Open in new tab</a>
+        <button type="button" data-close>Close</button>
+      </div>
+    </div>
+    <iframe id="pdfFrame" title="PDF viewer" loading="lazy"></iframe>
+  </div>
+</div>
+
+<script src="/js/references.js"></script>
+</body>
+</html>

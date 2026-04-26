@@ -1,20 +1,30 @@
-# Export of kgnews (gabrieldalton.com)
+# gabrieldalton.com
 
-Generated on: 2026-04-26T20:34:41.477Z
+Personal website source for [gabrieldalton.com](https://gabrieldalton.com). Static HTML/CSS/JS — no build step.
 
-## Contents
+## Structure
 
-- pages/ — All 6 custom pages with SEO metadata injected at the top of <head>
-- assets/ — Source hosting files (43 of 44 files)
-- redirects.json — All 17 301 redirects (JSON format)
-- redirects.csv — All redirects (CSV format)
-- .htaccess — Apache-style redirect rules
-- sitemap.xml — Generated sitemap of published pages
-- site-config.json — Site appearance, scripts, head/footer configuration
-- robots.txt — robots.txt as configured
+```
+.
+├── index.html              About / Resume / Portfolio / Contact (single page, tab-switched)
+├── references.html         Letters of recommendation & recognition
+├── headshots.html          Press headshots
+├── message-sent.html       Contact form thank-you page
+├── under-maintenance.html  Maintenance placeholder
+├── css/                    Stylesheets
+├── js/                     Scripts
+├── img/                    Photos, logos, icons, project thumbnails
+├── files/                  PDF documents (letters, certificates)
+├── .htaccess               301 redirects for short-link aliases
+├── robots.txt
+└── sitemap.xml
+```
 
-## Files that could not be downloaded
+## External dependencies
 
-- styles.css
+Two third-party CDN dependencies are still loaded over the network:
 
-Note: `styles.css` at the root is intercepted by a server-side rule and could not be retrieved through the public URL.
+- **Google Fonts** — Poppins (homepage, headshots, etc.) and Inter (references). To self-host, download the woff2 files and replace the `<link>` tags with `@font-face` rules in `css/`.
+- **ionicons 7.1.0** via jsDelivr — used for `<ion-icon>` elements throughout the site. To self-host, copy the `dist/` directory locally and update the script tags to point at it.
+
+Everything else (CSS, JS, images, PDFs) is local.
