@@ -15,7 +15,7 @@ Personal website source for [gabrieldalton.com](https://gabrieldalton.com). Stat
 ├── js/                     Scripts
 ├── img/                    Photos, logos, icons, project thumbnails
 ├── files/                  PDF documents (letters, certificates)
-├── .htaccess               301 redirects for short-link aliases
+├── vercel.json             Vercel config: cleanUrls + 301 short-link redirects
 ├── robots.txt
 └── sitemap.xml
 ```
