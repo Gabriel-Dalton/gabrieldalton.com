@@ -34,6 +34,8 @@
     </div>
     <nav class="primary-nav" aria-label="Primary">
       <a href="#letters">Letters</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#media">Podcasts &amp; Media</a>
       <a href="#contact">Contact</a>
       <a href="/" class="cta">Main Website</a>
     </nav>
@@ -42,8 +44,8 @@
 
 <section class="intro">
   <div class="container">
-    <h2>Trusted by community leaders &amp; organizations</h2>
-    <p>Browse verified letters of recommendation, recognition, and certificates. Use the search to quickly find a person or organization.</p>
+    <h2>References, testimonials, and media</h2>
+    <p>Browse recommendation letters, testimonials, and podcast/media mentions in one place. Use search to quickly find a person, organization, or feature.</p>
     <label class="search">
       <input id="searchInput" type="text" placeholder="Search by name or organization…" autocomplete="off">
     </label>
@@ -61,6 +63,22 @@
 
   <h4 class="group-title">Letters of Recognition &amp; Appreciation</h4>
   <div id="recognitionGrid" class="grid"></div>
+</section>
+
+<section id="testimonials" class="container letters">
+  <div class="section-head">
+    <h3>Testimonials</h3>
+    <p>Written feedback from people and organizations I’ve supported.</p>
+  </div>
+  <div id="testimonialsGrid" class="grid"></div>
+</section>
+
+<section id="media" class="container letters">
+  <div class="section-head">
+    <h3>Podcasts &amp; Media Features</h3>
+    <p>Interviews and features, with space to connect each one to a dedicated blog post.</p>
+  </div>
+  <div id="mediaGrid" class="grid"></div>
 </section>
 
 <section id="contact" class="container contact">
@@ -97,6 +115,6 @@
   </div>
 </div>
 
-<script src="/js/references.js"></script>
+<script src="/js/references.js" defer></script>
 </body>
 </html>
