@@ -148,3 +148,68 @@
     margin: 0 auto;
   }
 }
+
+.writing {
+  margin-bottom: 35px;
+}
+
+.writing-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.writing-list {
+  display: grid;
+  gap: 16px;
+}
+
+.writing-card {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+}
+
+.writing-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: var(--bg-gradient-jet);
+  z-index: -1;
+}
+
+.writing-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.writing-tag {
+  display: inline-block;
+  background: var(--onyx);
+  color: var(--orange-yellow-crayola);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.writing-number {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+}
+
+.writing-card-title {
+  margin-bottom: 8px;
+}
+
+.writing-card-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}
