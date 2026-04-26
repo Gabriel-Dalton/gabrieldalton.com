@@ -13,7 +13,7 @@
 
     // ===== Letters of recommendation (PDFs) =====
     { type: 'recommendation', name: 'Adrien de Malherbe', org: 'Managing Director · MA in Capital Markets & Securities', file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Adrien_de_Malherbe.pdf', summary: 'A letter of recommendation from a senior leader at a global investment-banking program.' },
-    { type: 'recommendation', name: 'Farooq Khan', org: 'Founder · ViRA360', file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf', summary: 'On collaboration on SEO content, website usability, and eco-friendly digital practices.' },
+    { type: 'recommendation', name: 'Farooq Khan', org: 'President · Denman Place Mall', file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf', summary: 'On the Denman Place Mall website redevelopment and securing roughly $330,000 in in-kind nonprofit technology grants.' },
     { type: 'recommendation', name: 'Jack Wood', org: "Financial Assistant · St. Paul's Anglican Church", file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Jack_Wood.pdf', summary: 'On the redevelopment of the parish website and a 90% reduction in hosting costs.' },
     { type: 'recommendation', name: 'Jordan Mittler', org: 'Founder · Mittler Senior Technology', file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Jordan_Mittler.pdf', summary: 'On leading sustainability work and rebuilding the MST website for accessibility.' },
     { type: 'recommendation', name: 'Sara Ciantar', org: "Office Administrator · St. Paul's Anglican Church", file: '/files/Gabriel_Dalton_Letter_of_Recommendation_Sara_Ciantar.pdf', summary: 'On launching the parish website on time, with discipline and craft.' },
