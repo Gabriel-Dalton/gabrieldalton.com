@@ -80,9 +80,11 @@
     if (item.type === 'quote') {
       return '<blockquote>' + escapeHtml(item.quote) + '<cite>' + escapeHtml(item.name) + ' — ' + escapeHtml(item.org) + '</cite></blockquote>';
     }
-    var heading = '<div><h3>' + escapeHtml(item.name) + '</h3>' +
-                  '<span class="resource-by">' + escapeHtml(item.org) + '</span></div>';
-    var summary = item.summary ? '<p>' + escapeHtml(item.summary) + '</p>' : '';
+    var heading = '<div class="resource-head">' +
+                    '<h3>' + escapeHtml(item.name) + '</h3>' +
+                    '<span class="resource-by">' + escapeHtml(item.org) + '</span>' +
+                  '</div>';
+    var summary = item.summary ? '<p class="resource-summary">' + escapeHtml(item.summary) + '</p>' : '';
     return heading + summary;
   }
 
@@ -106,7 +108,7 @@
       ).toLowerCase();
 
       article.innerHTML =
-        '<div class="resource-head">' + bodyFor(item) + '</div>' +
+        bodyFor(item) +
         '<div class="resource-foot">' +
           '<span class="resource-type resource-type--' + item.type + '">' + escapeHtml(typeLabel[item.type] || item.type) + '</span>' +
           ctaFor(item) +
