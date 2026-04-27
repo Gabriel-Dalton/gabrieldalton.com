@@ -18,7 +18,7 @@ Vercel deploys from the project's **Root Directory**. Set it once:
 
 1. Go to the Vercel dashboard → this project → **Settings → General → Root Directory**.
 2. Click **Edit**, set the root directory to `v2`, and save.
-3. The next deploy will serve `v2/` as `/`. Everything inside (HTML, `css/`, `js/`, `img/`, `files/`) becomes available at the site root.
+3. The next deploy will serve `v2/` as `/`. Everything inside (HTML, `css/`, `js/`, `img/`) becomes available at the site root. PDF letters / certificates are not stored locally — they're served from `https://assets.gabrieldalton.com/References/`.
 
 `v2/vercel.json` provides clean URLs (`/writing` → `writing.html`) and the 301 short-link redirects (`/freewebsite`, `/translink`, `/book`, etc.).
 
@@ -42,7 +42,7 @@ v2/
 ├── js/references.js             References data + PDF modal
 ├── img/                         Photos, logos, icons, project thumbnails
 │   └── headshot.jpg             ★ Primary press headshot — 2.5 MB, 300 DPI
-├── files/                       PDF documents (8 letters / certificates)
+├── (no local files/)            PDFs served from https://assets.gabrieldalton.com/References/
 ├── vercel.json                  Vercel cleanUrls + redirects
 ├── robots.txt
 └── sitemap.xml

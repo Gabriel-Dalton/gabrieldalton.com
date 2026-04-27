@@ -26,8 +26,8 @@
     { "source": "/book", "destination": "/contact?topic=speaking", "permanent": true },
     { "source": "/inquire", "destination": "/contact?topic=speaking", "permanent": true },
 
-    { "source": "/letter-of-recognition-patty-hajdu-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recognition_Patty_Hajdu.pdf", "permanent": true },
-    { "source": "/letter-of-recognition-spencer-chandra-hebert-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recognition_Spencer_Chandra_Hebert.pdf", "permanent": true },
-    { "source": "/letter-of-recommendation-farooq-khan-pdf", "destination": "/files/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf", "permanent": true }
+    { "source": "/letter-of-recognition-patty-hajdu-pdf", "destination": "https://assets.gabrieldalton.com/References/Gabriel_Dalton_Letter_of_Recognition_Patty_Hajdu.pdf", "permanent": true },
+    { "source": "/letter-of-recognition-spencer-chandra-hebert-pdf", "destination": "https://assets.gabrieldalton.com/References/Gabriel_Dalton_Letter_of_Recognition_Spencer_Chandra_Hebert.pdf", "permanent": true },
+    { "source": "/letter-of-recommendation-farooq-khan-pdf", "destination": "https://assets.gabrieldalton.com/References/Gabriel_Dalton_Letter_of_Recommendation_Farooq_Khan.pdf", "permanent": true }
   ]
 }

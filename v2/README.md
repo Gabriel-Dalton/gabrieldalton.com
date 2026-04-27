@@ -21,7 +21,7 @@ Personal website source for [gabrieldalton.com](https://gabrieldalton.com). Stat
 │   ├── main.js                 Shared script — filters, search, copy-email, form
 │   └── references.js           References data & modal handler
 ├── img/                        Photos, logos, icons, project thumbnails
-├── files/                      PDF documents
+├── (no local PDFs)             Letters & certificates served from https://assets.gabrieldalton.com/References/
 ├── vercel.json                 Vercel config — cleanUrls + 301 redirects
 ├── robots.txt
 └── sitemap.xml
