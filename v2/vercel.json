@@ -16,6 +16,8 @@
     { "source": "/ted", "destination": "https://www.youtube.com/watch?v=9L3bjj3GkSI", "permanent": true },
 
     { "source": "/recommendations", "destination": "/references", "permanent": true },
+    { "source": "/work", "destination": "/portfolio", "permanent": true },
+    { "source": "/projects", "destination": "/portfolio", "permanent": true },
     { "source": "/resources", "destination": "/references", "permanent": true },
     { "source": "/blog", "destination": "/writing", "permanent": true },
     { "source": "/posts", "destination": "/writing", "permanent": true },
