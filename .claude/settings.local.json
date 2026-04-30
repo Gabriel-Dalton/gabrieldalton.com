@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.youtube.com)",
+      "WebFetch(domain:www.vsb.bc.ca)",
+      "WebFetch(domain:happyeconews.com)",
+      "WebFetch(domain:www.theteenmagazine.com)",
+      "WebFetch(domain:www.changemakersgen.com)"
+    ]
+  }
+}

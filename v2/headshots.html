@@ -29,7 +29,11 @@
 <header class="masthead">
   <div class="container masthead-inner">
     <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">G</span><span>Gabriel Dalton</span></a>
-    <nav class="primary-nav" aria-label="Primary">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav-menu" aria-label="Toggle menu">
+      <svg class="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+    </button>
+    <nav class="primary-nav" id="primary-nav-menu" aria-label="Primary">
       <a class="nav-link" href="portfolio.html">Portfolio</a>
       <a class="nav-link" href="writing.html">Writing</a>
       <a class="nav-link" href="speaking.html">Speaking</a>
