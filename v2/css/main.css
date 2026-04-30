@@ -27,9 +27,10 @@
   --amber:     #c2750c;
 
   /* type */
-  --display:   "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
-  --sans:      "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:      "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --display:        "Bricolage Grotesque", "Hanken Grotesk", system-ui, sans-serif;
+  --display-serif:  "Instrument Serif", "Newsreader", Georgia, "Times New Roman", serif;
+  --sans:           "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:           "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   /* layout */
   --page-max: 72rem;
@@ -106,11 +107,25 @@ a:hover { color: var(--green-700); }
 
 h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; margin: 0; color: var(--ink); }
 .h-display {
+  font-family: var(--display);
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
   letter-spacing: -0.035em;
   line-height: 1.02;
   font-weight: 600;
   font-variation-settings: "wdth" 100, "opsz" 24;
+}
+/* tree-planting accent: a single italic word set in Instrument Serif,
+   so the otherwise-Bricolage headline gets one refined flourish */
+.h-display em {
+  font-family: var(--display-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--green-700);
+  letter-spacing: -0.005em;
+  /* italic serif sits visually a hair lower than the upright sans;
+     tiny vertical nudge keeps the baselines feeling aligned */
+  display: inline-block;
+  transform: translateY(0.04em);
 }
 .h-1 {
   font-size: clamp(2rem, 4vw, 3rem);
@@ -324,13 +339,14 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; letter-spacing: 
   display: inline-flex;
   align-items: center;
   gap: 0.55em;
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.9rem;
   background: var(--green-50);
   border: 1px solid var(--green-100);
   border-radius: 999px;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--green-900);
   margin-bottom: 1.5rem;
 }
@@ -1041,13 +1057,13 @@ a.card:hover, .card.card-link:hover {
 @media (max-width: 760px) { .site-footer-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .site-footer-grid { grid-template-columns: 1fr; } }
 .footer-block h5 {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-900);
   margin: 0 0 0.85rem 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 .footer-block ul { display: flex; flex-direction: column; gap: 0.45rem; }
 .footer-block a { color: var(--ink-mid); text-decoration: none; }
@@ -1060,9 +1076,9 @@ a.card:hover, .card.card-link:hover {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: 0;
   color: var(--ink-soft);
 }
 
@@ -1561,34 +1577,53 @@ a.card:hover, .card.card-link:hover {
 }
 
 .bio-callout {
-  background: var(--white);
-  border: 1px solid var(--green-100);
-  border-left: 3px solid var(--green-700);
+  background: var(--green-50);
   border-radius: var(--r-lg);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  padding: clamp(1.75rem, 2.5vw, 2.25rem);
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
-  box-shadow: var(--shadow-sm);
+  gap: 1rem;
+  position: relative;
+}
+.bio-callout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(1.75rem, 2.5vw, 2.25rem);
+  width: 2.25rem;
+  height: 2px;
+  background: var(--green-700);
+  border-radius: 2px;
 }
 .bio-callout-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
   font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--green-700);
   font-weight: 500;
+  margin-top: 0.25rem;
 }
 .bio-callout-quote {
   margin: 0;
-  font-family: var(--display);
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+  font-family: var(--display-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem);
   line-height: 1.4;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.005em;
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 400;
 }
-.bio-callout-quote strong { color: var(--green-900); font-weight: 600; }
+.bio-callout-quote strong {
+  color: var(--green-900);
+  font-style: normal;
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
 
 /* ============================================================
    eyebrow — TEDx red variant
@@ -1619,3 +1654,109 @@ a.card:hover, .card.card-link:hover {
 /* slightly bolder default for all buttons — improves perceived contrast */
 .btn { font-weight: 550; }
 .btn-primary { font-weight: 600; }
+
+/* ============================================================
+   obfuscated email — bot-resistant display in footer
+   ============================================================ */
+.email-obf {
+  font-feature-settings: "kern" 1;
+  white-space: nowrap;
+}
+.email-obf .at,
+.email-obf .dot {
+  color: var(--ink-faint);
+  font-style: normal;
+  margin: 0 0.15em;
+}
+
+/* ============================================================
+   newsletter — v2-styled wrapper around the Supascribe widget
+   ============================================================ */
+.newsletter-card {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--r-xl);
+  padding: clamp(2rem, 4vw, 3rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+}
+@media (max-width: 760px) { .newsletter-card { grid-template-columns: 1fr; } }
+.newsletter-text { display: flex; flex-direction: column; gap: 0.65rem; max-width: 36ch; }
+.newsletter-text .h-2 { color: var(--ink); }
+.newsletter-text .muted { font-size: 1rem; line-height: 1.5; }
+.newsletter-form { display: flex; flex-direction: column; gap: 0.85rem; }
+.newsletter-fineprint {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+/* override Supascribe's defaults so the widget looks native to v2 */
+[data-supascribe-embed-id="97733971566"] {
+  width: 100%;
+}
+[data-supascribe-embed-id="97733971566"] .supascribe-widget,
+[data-supascribe-embed-id="97733971566"] .custom-substack-widget {
+  max-width: 100% !important;
+  width: 100%;
+  border: 1px solid var(--rule) !important;
+  border-radius: var(--r-md) !important;
+  background: var(--white);
+  font-family: var(--sans) !important;
+  font-size: 1rem;
+  overflow: hidden;
+}
+/* the rendered Supascribe form sets its own theme variables — pin them */
+[data-supascribe-embed-id="97733971566"] .csw-theme-custom {
+  --csw-primary-color: var(--green-900) !important;
+  --csw-input-color: var(--white) !important;
+  --csw-text-color: var(--white) !important;
+  --csw-input-text-color: var(--ink) !important;
+  --csw-success-color: var(--green-700) !important;
+  --csw-error-color: #c63b1f !important;
+}
+[data-supascribe-embed-id="97733971566"] input[type="email"] {
+  background: var(--white) !important;
+  color: var(--ink) !important;
+  font-family: var(--sans) !important;
+  font-size: 1rem !important;
+  padding: 0.85rem 1rem !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
+[data-supascribe-embed-id="97733971566"] input[type="email"]::placeholder {
+  color: var(--ink-faint) !important;
+  opacity: 1 !important;
+}
+[data-supascribe-embed-id="97733971566"] button[type="submit"] {
+  background: var(--green-900) !important;
+  color: var(--white) !important;
+  font-family: var(--sans) !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  padding: 0.85rem 1.4rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transition: background var(--t-fast) !important;
+  white-space: nowrap;
+}
+[data-supascribe-embed-id="97733971566"] button[type="submit"]:hover {
+  background: var(--green-800) !important;
+}
+[data-supascribe-embed-id="97733971566"] .custom-substack-widget+.success {
+  font-family: var(--sans);
+  color: var(--green-700);
+  font-size: 0.92rem;
+  margin-top: 0.5rem;
+}
+[data-supascribe-embed-id="97733971566"] .custom-substack-widget+.error {
+  font-family: var(--sans);
+  color: #c63b1f;
+  font-size: 0.92rem;
+  margin-top: 0.5rem;
+}
