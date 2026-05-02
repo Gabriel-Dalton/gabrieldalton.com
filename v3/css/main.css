@@ -817,6 +817,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 999px;
 }
 
+/* writing post header */
+.post-meta {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.75rem;
+}
+
 /* about prose */
 .prose p { color: var(--ink); }
 .prose h2 {
