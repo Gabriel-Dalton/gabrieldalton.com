@@ -87,6 +87,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--ink);
   text-decoration: none;
   font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
 }
 .site-header .brand:hover { color: var(--green-700); }
 .site-header nav { display: flex; gap: 1.25rem; }
@@ -608,10 +610,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--ink);
 }
 .page-title {
-  font-size: clamp(1.65rem, 4vw, 2rem);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
 }
 .page-intro {
   margin: 0 0 2rem;
