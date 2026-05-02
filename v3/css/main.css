@@ -317,7 +317,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   --csw-error-color: var(--error) !important;
 }
 
-/* nuke every conceivable focus visual on every descendant */
+/* nuke every conceivable focus visual + border on every descendant, every state */
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"],
 [data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *,
 [data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:focus,
 [data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:focus-visible,
@@ -330,16 +331,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   outline-color: transparent !important;
   outline-offset: 0 !important;
   box-shadow: none !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-
-/* the gold ring may also be a `border` on a focus-within wrapper, not an outline */
-[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] div:focus-within,
-[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] form:focus-within,
-[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] label:focus-within,
-[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] fieldset:focus-within {
   border: 0 !important;
+  border-width: 0 !important;
   border-color: transparent !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 [data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] input[type="email"],
