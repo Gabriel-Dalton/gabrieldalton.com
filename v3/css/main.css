@@ -746,6 +746,24 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .meta-list li a { color: var(--green-700); }
 
+.project-logo {
+  margin: 0 0 2rem;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-logo img {
+  max-width: 100%;
+  max-height: 8rem;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
 .project-quote {
   margin: 1.5rem 0;
   padding-left: 1rem;
