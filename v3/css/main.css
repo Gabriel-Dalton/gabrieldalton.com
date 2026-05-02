@@ -239,12 +239,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   outline: 2px solid var(--green-700);
   outline-offset: 3px;
 }
-.newsletter-launcher::before {
-  content: "";
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: var(--green-100);
+.newsletter-launcher-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--green-100);
 }
 .newsletter-panel {
   position: absolute;
@@ -313,6 +312,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   --csw-success-color: var(--green-700) !important;
   --csw-error-color: var(--error) !important;
 }
+/* kill the default browser/widget focus rings — they render an ugly yellow/gold */
+[data-supascribe-embed-id="97733971566"] *:focus,
+[data-supascribe-embed-id="97733971566"] *:focus-visible,
+[data-supascribe-embed-id="97733971566"] *:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}
 [data-supascribe-embed-id="97733971566"] input[type="email"] {
   background: #fff !important;
   color: var(--ink) !important;
@@ -321,11 +327,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border: 1px solid var(--rule) !important;
   border-radius: 4px !important;
   outline: 0 !important;
-  transition: border-color 150ms, box-shadow 150ms !important;
+  transition: border-color 150ms !important;
 }
 [data-supascribe-embed-id="97733971566"] input[type="email"]:focus {
   border-color: var(--green-700) !important;
-  box-shadow: 0 0 0 3px var(--green-50) !important;
 }
 [data-supascribe-embed-id="97733971566"] input[type="email"]::placeholder {
   color: var(--ink-soft) !important;
@@ -338,6 +343,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-weight: 500 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
+  border: none !important;
   border-radius: 4px !important;
   padding: 0.7rem 1.25rem !important;
   transition: background 150ms !important;

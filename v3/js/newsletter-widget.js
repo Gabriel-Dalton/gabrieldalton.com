@@ -11,7 +11,11 @@
   widget.setAttribute('aria-label', 'Newsletter');
   widget.innerHTML =
     '<button class="newsletter-launcher" type="button" aria-expanded="false" aria-controls="newsletterPanel">' +
-      'Follow my journey' +
+      '<svg class="newsletter-launcher-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<rect x="3" y="5" width="18" height="14" rx="2"/>' +
+        '<path d="m3 7 9 6 9-6"/>' +
+      '</svg>' +
+      'Join My Journey' +
     '</button>' +
     '<div class="newsletter-panel" id="newsletterPanel" hidden>' +
       '<button class="newsletter-close" type="button" aria-label="Close">×</button>' +
