@@ -41,7 +41,7 @@
       </figure>
     </div>
 
-    <p>I was born on a boat and lived there for the first six years of my life. I taught myself to code at ten, and by the time I turn twenty, I'll have spent half my life writing software.</p>
+    <p>I was born on a boat. I taught myself to code at ten, and by the time I turn twenty, I'll have spent half my life writing software.</p>
 
     <p>I promote digital sustainability and build energy-efficient, low-carbon websites through my not-for-profit, <a href="https://oasisofchange.org" target="_blank" rel="noopener">Oasis of Change</a>.</p>
 
@@ -51,6 +51,7 @@
     <ul class="stats-list">
       <li><strong>17,000+</strong> trees planted across 32 countries</li>
       <li><strong>$868k</strong> annual nonprofit grants secured</li>
+      <li><strong data-years-since="2019">7</strong> years of experience</li>
       <li><strong>98%</strong> peak reduction in site carbon and water use</li>
     </ul>
 
@@ -99,7 +100,12 @@
 
 </div>
 
-<script>document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());</script>
+<script>
+document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+document.querySelectorAll('[data-years-since]').forEach(el => {
+  el.textContent = new Date().getFullYear() - parseInt(el.dataset.yearsSince, 10);
+});
+</script>
 <script src="js/newsletter-widget.js" defer></script>
 
 </body>
