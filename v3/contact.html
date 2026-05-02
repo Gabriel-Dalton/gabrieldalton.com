@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact · Gabriel Dalton</title>
+<meta name="description" content="Get in touch with Gabriel Dalton: speaking inquiries, project work, press, and partnerships.">
+<meta name="author" content="Gabriel Dalton">
+<meta name="theme-color" content="#0a3522">
+
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div class="site">
+
+  <header class="site-header">
+    <a class="brand" href="index.html">Gabriel Dalton</a>
+    <nav>
+      <a href="writing.html">Writing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="page-title">Get in touch.</h1>
+    <p class="page-intro">Speaking, projects, press, partnerships. I read every message and reply within 2 to 3 business days.</p>
+
+    <form id="contactForm" class="form" method="POST" action="https://formsubmit.co/fe194e95c822109c2887c9406556d6c7" novalidate>
+
+      <div class="form-field">
+        <span class="form-field-label">What is this about?</span>
+        <div class="topic-pills" role="radiogroup" aria-label="Topic">
+          <label class="topic-pill"><input type="radio" name="topic" value="Speaking inquiry" required> Speaking inquiry</label>
+          <label class="topic-pill"><input type="radio" name="topic" value="Project / consulting" required> Project / consulting</label>
+          <label class="topic-pill"><input type="radio" name="topic" value="Press / media" required> Press / media</label>
+          <label class="topic-pill"><input type="radio" name="topic" value="Nonprofit grants" required> Nonprofit grants</label>
+          <label class="topic-pill"><input type="radio" name="topic" value="Just saying hi" required> Just saying hi</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" type="text" name="fullname" autocomplete="name" required maxlength="120" placeholder="Jane Doe">
+          <span class="form-hint" data-error="cf-name"></span>
+        </div>
+        <div class="form-field email-field">
+          <label for="cf-email">Email address</label>
+          <input id="cf-email" type="email" name="email" autocomplete="email" required maxlength="180" placeholder="you@example.com" spellcheck="false" autocapitalize="none">
+          <ul id="cf-email-suggest" class="email-suggest" role="listbox" hidden></ul>
+          <span class="form-hint" data-error="cf-email"></span>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="cf-org">Organization <span class="optional">(optional)</span></label>
+        <input id="cf-org" type="text" name="organization" autocomplete="organization" maxlength="120" placeholder="Where you're writing from">
+      </div>
+
+      <div class="form-field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="6" required minlength="20" maxlength="4000" placeholder="A few sentences on what you're working on, what you're hoping for, and any dates or constraints."></textarea>
+        <div class="form-meta-row">
+          <span class="form-hint" data-error="cf-message"></span>
+          <span class="char-count" id="cf-charcount">0 / 4000</span>
+        </div>
+      </div>
+
+      <div class="hp-field" aria-hidden="true">
+        <label for="cf-website">Website (leave blank)</label>
+        <input id="cf-website" type="text" name="_honey" tabindex="-1" autocomplete="off">
+      </div>
+
+      <input type="hidden" name="cf_loaded" id="cf_loaded">
+      <input type="hidden" name="cf_token" id="cf_token">
+      <input type="hidden" name="_subject" value="gabrieldalton.com — new contact">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://gabrieldalton.com/message-sent">
+
+      <label class="form-consent">
+        <input type="checkbox" id="cf-consent" required>
+        <span>I understand my message will be sent over an encrypted form relay and a copy will reach Gabriel only.</span>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn" id="cf-submit" disabled>
+          <span class="btn-label">Send message</span>
+        </button>
+        <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <h2 class="eyebrow">Privacy &amp; security</h2>
+    <ul class="now-list">
+      <li>End-to-end TLS over the form relay.</li>
+      <li>Honeypot and timing-trap spam protection.</li>
+      <li>Local rate-limit (3 messages per hour).</li>
+      <li>Direct email is not exposed publicly.</li>
+      <li>No third-party trackers on this page.</li>
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year>2026</span> Gabriel Dalton</p>
+    <p>Vancouver, British Columbia</p>
+  </footer>
+
+</div>
+
+<script>document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());</script>
+<script src="js/contact.js"></script>
+
+</body>
+</html>
