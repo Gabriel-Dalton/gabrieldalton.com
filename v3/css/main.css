@@ -118,6 +118,30 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   font-size: 1rem;
 }
 
+/* homepage hero: name on left, headshot on right */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(1.25rem, 4vw, 2rem);
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.hero-grid .lede { margin-bottom: 0; }
+.hero-photo {
+  width: clamp(5.5rem, 13vw, 9rem);
+  aspect-ratio: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--green-100);
+  flex-shrink: 0;
+}
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* homepage header variant: nav-only */
 .site-header--solo { justify-content: flex-end; }
 
