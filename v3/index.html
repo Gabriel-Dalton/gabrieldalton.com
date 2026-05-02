@@ -14,128 +14,55 @@
 <meta property="og:title" content="Gabriel Dalton">
 <meta property="og:description" content="AI engineer, digital sustainability advocate, and TEDx speaker. Vancouver, BC.">
 
-<style>
-  :root {
-    --ink: #0c1f17;
-    --ink-mid: #4a5a52;
-    --ink-soft: #6b7a72;
-    --green-700: #14613f;
-    --green-100: #d9e8df;
-    --paper: #fafaf8;
-    --rule: #e3e7e4;
-  }
-  *, *::before, *::after { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font: 17px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-  }
-  main {
-    max-width: 38rem;
-    margin: 0 auto;
-    padding: clamp(3rem, 8vh, 6rem) 1.5rem;
-  }
-  h1 {
-    font-size: clamp(2rem, 5vw, 2.5rem);
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    margin: 0 0 0.5rem;
-    font-weight: 600;
-  }
-  .lede {
-    margin: 0 0 2.25rem;
-    color: var(--ink-mid);
-    font-size: 1rem;
-  }
-  p { margin: 0 0 1.25rem; }
-  strong { font-weight: 600; color: var(--ink); }
-  a {
-    color: var(--green-700);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.2em;
-    text-decoration-color: var(--green-100);
-    transition: text-decoration-color 150ms;
-  }
-  a:hover { text-decoration-color: var(--green-700); }
-  h2 {
-    margin: 2.5rem 0 0.85rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    font-weight: 500;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  }
-  ul { margin: 0; padding: 0; list-style: none; }
-  ul.now li {
-    padding-left: 1.1rem;
-    position: relative;
-    margin-bottom: 0.4rem;
-    color: var(--ink-mid);
-  }
-  ul.now li::before {
-    content: "—";
-    position: absolute;
-    left: 0;
-    color: var(--ink-soft);
-  }
-  .elsewhere {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.25rem;
-  }
-  .footer-meta {
-    margin-top: 3.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--rule);
-    color: var(--ink-soft);
-    font-size: 0.82rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  ::selection { background: var(--green-100); color: var(--ink); }
-</style>
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-<main>
-  <h1>Gabriel Dalton</h1>
-  <p class="lede">AI engineer, digital sustainability advocate, TEDx speaker. Vancouver, BC.</p>
+<div class="site">
 
-  <p>I work on the cost of the web — carbon, water, attention, accessibility — and the responsible deployment of AI on top of it.</p>
+  <header class="site-header site-header--solo">
+    <nav>
+      <a href="writing.html">Writing</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="speaking.html">Speaking</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-  <p>Founder of <a href="https://oasisofchange.org" target="_blank" rel="noopener">Oasis of Change, Inc.</a>, a Vancouver-based not-for-profit promoting digital sustainability and accessibility. Building <strong>VCASSE</strong>, the Vancouver Centre for AI Safety, Sustainability &amp; Ethics. Recipient of the 2025 City of Vancouver Impact &amp; Innovation Award.</p>
+  <main>
+    <h1>Gabriel Dalton</h1>
+    <p class="lede">AI engineer, digital sustainability advocate, TEDx speaker. Vancouver, BC.</p>
 
-  <h2>Now</h2>
-  <ul class="now">
-    <li>Generative engine optimization for <a href="https://plasticbank.com" target="_blank" rel="noopener">Plastic Bank</a></li>
-    <li>Accessibility work with <a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">AccessibilityChecker.org</a></li>
-    <li>Building VCASSE</li>
-  </ul>
+    <p>I work on the cost of the web: carbon, water, attention, accessibility. And the responsible deployment of AI on top of it.</p>
 
-  <h2>Elsewhere</h2>
-  <p class="elsewhere">
-    <a href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://gabrieldalton.medium.com/" target="_blank" rel="noopener">Medium</a>
-    <a href="https://gabrieldalton.substack.com/" target="_blank" rel="noopener">Substack</a>
-    <a href="https://www.youtube.com/watch?v=9L3bjj3GkSI" target="_blank" rel="noopener">TEDx talk</a>
-    <a href="mailto:me@gabrieldalton.com">Email</a>
-  </p>
+    <p>Founder of <a href="https://oasisofchange.org" target="_blank" rel="noopener">Oasis of Change, Inc.</a>, a Vancouver-based not-for-profit promoting digital sustainability and accessibility. Currently building <strong>VCASSE</strong>, the Vancouver Centre for AI Safety, Sustainability &amp; Ethics. Recipient of the 2025 City of Vancouver Impact &amp; Innovation Award.</p>
 
-  <div class="footer-meta">
-    <span>&copy; <span data-year>2026</span> Gabriel Dalton</span>
-    <span>Vancouver, British Columbia</span>
-  </div>
-</main>
+    <h2 class="eyebrow">Now</h2>
+    <ul class="now-list">
+      <li>Generative engine optimization for <a href="https://plasticbank.com" target="_blank" rel="noopener">Plastic Bank</a>.</li>
+      <li>Accessibility work with <a href="https://www.accessibilitychecker.org/" target="_blank" rel="noopener">AccessibilityChecker.org</a>.</li>
+      <li>Building VCASSE.</li>
+    </ul>
+
+    <h2 class="eyebrow">Elsewhere</h2>
+    <div class="social-row" aria-label="Social links">
+      <a class="social-icon" href="https://www.linkedin.com/in/gabrieldalton/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
+      <a class="social-icon" href="https://www.instagram.com/photoswithgabe/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a>
+      <a class="social-icon" href="https://gabrieldalton.medium.com/" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.846 6.887c.03-.295-.083-.586-.303-.784l-2.24-2.7v-.403h6.958l5.378 11.795 4.728-11.795H24v.403l-1.917 1.837c-.165.126-.247.333-.213.538v13.498c-.034.204.048.411.213.537l1.871 1.837v.403h-9.412v-.403l1.939-1.882c.19-.19.19-.246.19-.537V8.321l-5.389 13.688h-.728L4.28 8.321v9.174c-.052.385.076.774.347 1.052l2.521 3.058v.404H0v-.404l2.521-3.058c.27-.279.39-.67.325-1.052V6.887z"/></svg></a>
+      <a class="social-icon" href="https://gabrieldalton.substack.com/" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    </div>
+    <p class="elsewhere">
+      <a href="https://www.youtube.com/watch?v=9L3bjj3GkSI" target="_blank" rel="noopener">TEDx talk</a>
+      <a href="mailto:me@gabrieldalton.com">Email</a>
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-year>2026</span> Gabriel Dalton</p>
+    <p>Vancouver, British Columbia</p>
+  </footer>
+
+</div>
 
 <script>document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());</script>
 
