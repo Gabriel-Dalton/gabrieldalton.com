@@ -307,48 +307,76 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* supascribe (substack) embed — green theme to match the rest */
-[data-supascribe-embed-id="97733971566"] {
+/* Doubled attribute selector below = specificity (0,2,1)+ to outweigh Supascribe's
+   class-based rules that load after main.css. */
+[data-supascribe-embed-id="97733971566"],
+[data-supascribe-embed-id="97733971566"].csw-theme-custom {
+  --csw-primary-color: var(--green-700) !important;
   --csw-input-text-color: var(--ink) !important;
   --csw-success-color: var(--green-700) !important;
   --csw-error-color: var(--error) !important;
 }
-/* kill the default browser/widget focus rings — they render an ugly yellow/gold */
-[data-supascribe-embed-id="97733971566"] *:focus,
-[data-supascribe-embed-id="97733971566"] *:focus-visible,
-[data-supascribe-embed-id="97733971566"] *:focus-within {
-  outline: none !important;
+
+/* nuke every conceivable focus visual on every descendant */
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:focus,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:focus-visible,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:focus-within,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:hover,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] *:active {
+  outline: 0 !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
+  outline-color: transparent !important;
+  outline-offset: 0 !important;
   box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
-[data-supascribe-embed-id="97733971566"] input[type="email"] {
+
+/* the gold ring may also be a `border` on a focus-within wrapper, not an outline */
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] div:focus-within,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] form:focus-within,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] label:focus-within,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] fieldset:focus-within {
+  border: 0 !important;
+  border-color: transparent !important;
+}
+
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] input[type="email"],
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] input[type="email"]:focus,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] input[type="email"]:focus-visible {
   background: #fff !important;
   color: var(--ink) !important;
   font: inherit !important;
   padding: 0.7rem 0.85rem !important;
-  border: 1px solid var(--rule) !important;
+  border: none !important;
   border-radius: 4px !important;
   outline: 0 !important;
-  transition: border-color 150ms !important;
+  box-shadow: none !important;
+  transition: none !important;
 }
-[data-supascribe-embed-id="97733971566"] input[type="email"]:focus {
-  border-color: var(--green-700) !important;
-}
-[data-supascribe-embed-id="97733971566"] input[type="email"]::placeholder {
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] input[type="email"]::placeholder {
   color: var(--ink-soft) !important;
   opacity: 1 !important;
 }
-[data-supascribe-embed-id="97733971566"] button[type="submit"] {
+
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] button[type="submit"],
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] button[type="submit"]:focus,
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] button[type="submit"]:focus-visible {
   background: var(--green-900) !important;
   color: #fff !important;
   font: inherit !important;
   font-weight: 500 !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
-  border: none !important;
+  border: 0 !important;
   border-radius: 4px !important;
   padding: 0.7rem 1.25rem !important;
+  outline: 0 !important;
+  box-shadow: none !important;
   transition: background 150ms !important;
 }
-[data-supascribe-embed-id="97733971566"] button[type="submit"]:hover {
+[data-supascribe-embed-id="97733971566"][data-supascribe-embed-id="97733971566"] button[type="submit"]:hover {
   background: var(--ink) !important;
 }
 .leaders-note {
