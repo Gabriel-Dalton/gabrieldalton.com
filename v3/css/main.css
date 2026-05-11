@@ -302,7 +302,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   }
 }
 
-/* CO₂ savings floating widget — mirrors the newsletter widget on the left */
+/* Sustainability case-study floating widget (bottom-left) */
 .co2-widget {
   position: fixed;
   bottom: clamp(1rem, 3vw, 1.5rem);
@@ -325,7 +325,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(12, 31, 23, 0.18);
   transition: background 150ms, transform 150ms, box-shadow 150ms;
-  max-width: 14rem;
 }
 .co2-launcher:hover {
   background: var(--ink);
@@ -342,22 +341,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   flex-shrink: 0;
   color: var(--green-100);
 }
-.co2-launcher-label {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.2rem;
-}
-.co2-launcher-num {
-  font-variant-numeric: tabular-nums;
-  min-width: 3.2em;
-  text-align: left;
-}
+.co2-launcher-label--short { display: none; }
 
 .co2-panel {
   position: absolute;
   bottom: calc(100% + 0.85rem);
   left: 0;
   width: min(22rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
   background: #fff;
   border: 1px solid var(--rule);
   border-radius: 8px;
@@ -391,27 +383,52 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .co2-eyebrow {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-soft);
   font-weight: 500;
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.7rem;
+  line-height: 1.4;
 }
-.co2-figure-saved {
-  margin: 0 0 0.2rem;
+.co2-task {
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.co2-headline {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.1rem;
+  margin: 0.25rem 0 0.25rem;
+}
+.co2-headline-num {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.85rem;
+  font-size: 3.4rem;
   font-weight: 600;
   color: var(--green-700);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.025em;
+  line-height: 1;
   font-variant-numeric: tabular-nums;
-  line-height: 1.1;
 }
-.co2-figure-note {
+.co2-headline-unit {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--green-700);
+  line-height: 1;
+}
+.co2-headline-caption {
   margin: 0 0 1.1rem;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--ink-mid);
+  text-align: center;
+  line-height: 1.45;
 }
+.co2-headline-caption strong { color: var(--ink); }
+
 .co2-compare {
   margin: 0 0 1.1rem;
   padding: 0.75rem 0.95rem;
@@ -419,12 +436,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.5rem;
 }
 .co2-compare-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
 }
@@ -435,43 +452,77 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   color: var(--ink);
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 .co2-compare-value--actual { color: var(--green-700); }
-
-.co2-scale {
-  border-top: 1px solid var(--rule);
-  padding-top: 0.9rem;
-  margin: 0 0 0.6rem;
+.co2-rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
 }
+.co2-rating--good { background: var(--green-700); }
+
 .co2-scale-title {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-soft);
   font-weight: 500;
   margin: 0 0 0.55rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.95rem;
 }
 .co2-scale-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
 }
 .co2-scale-list li {
+  position: relative;
+  padding-left: 1.1rem;
   font-size: 0.85rem;
   color: var(--ink-mid);
   line-height: 1.45;
 }
+.co2-scale-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.1rem;
+  top: 0;
+  color: var(--green-700);
+  font-weight: 700;
+}
 .co2-scale-list strong { color: var(--ink); }
+
+.co2-cta {
+  margin: 0 0 0.65rem;
+  font-size: 0.88rem;
+}
+.co2-cta a {
+  color: var(--green-700);
+  font-weight: 500;
+}
 .co2-fineprint {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.66rem;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   color: var(--ink-soft);
-  margin: 0.85rem 0 0;
+  margin: 0;
   line-height: 1.6;
 }
 .co2-fineprint a {
@@ -485,9 +536,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     width: calc(100vw - 2rem);
     margin-left: -0.5rem;
   }
-}
-@media (max-width: 360px) {
-  .co2-launcher-label-prefix { display: none; }
+  .co2-launcher { padding: 0.6rem 1rem; font-size: 0.88rem; }
+  .co2-launcher-label--long { display: none; }
+  .co2-launcher-label--short { display: inline; }
 }
 
 /* supascribe (substack) embed — green theme to match the rest */

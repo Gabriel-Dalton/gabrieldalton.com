@@ -3,101 +3,60 @@
   if (window.__co2WidgetMounted) return;
   window.__co2WidgetMounted = true;
 
-  // Per-visit emissions from the Mittler Senior Technology case study —
-  // a typical heavy site vs. the optimised version we shipped:
-  //   typical: 5.31 g CO₂ per visit
-  //   actual:  0.10 g CO₂ per visit  (98.1% reduction)
-  // The per-visit cost is spread across an industry-average 53 s session
-  // to derive a per-second rate. The "actual" site is treated as ~0 g/s
-  // after page-load — an optimised static page has no ongoing analytics,
-  // ads, or polling, so it stops emitting once it's loaded.
-  var TYPICAL_PER_VISIT_G = 5.31;
-  var OPTIMISED_PER_VISIT_G = 0.10;
-  var SESSION_S = 53;
-  var TYPICAL_RATE_G_PER_S = TYPICAL_PER_VISIT_G / SESSION_S;
-  var PER_VISIT_SAVINGS_G = TYPICAL_PER_VISIT_G - OPTIMISED_PER_VISIT_G;
-  var STORAGE_KEY = 'gd_co2_session_saved_v1';
-
-  // Carry over savings from prior pages in this browser session.
-  var sessionBaseG = 0;
-  try {
-    sessionBaseG = parseFloat(sessionStorage.getItem(STORAGE_KEY)) || 0;
-  } catch (_) { /* sessionStorage disabled / blocked */ }
-  // This page load itself avoids one "typical visit" worth of emissions.
-  sessionBaseG += PER_VISIT_SAVINGS_G;
-  var pageLoadTime = (window.performance && performance.now) ? performance.now() : Date.now();
-
-  function elapsedSeconds() {
-    var now = (window.performance && performance.now) ? performance.now() : Date.now();
-    return (now - pageLoadTime) / 1000;
-  }
-  function liveSaved() {
-    return sessionBaseG + elapsedSeconds() * TYPICAL_RATE_G_PER_S;
-  }
-  function liveTypical() {
-    return TYPICAL_PER_VISIT_G + elapsedSeconds() * TYPICAL_RATE_G_PER_S;
-  }
-  function liveActual() {
-    return OPTIMISED_PER_VISIT_G;
-  }
-  function fmt(grams) {
-    if (grams < 1) return Math.round(grams * 1000) + ' mg';
-    if (grams < 1000) return grams.toFixed(1) + ' g';
-    return (grams / 1000).toFixed(2) + ' kg';
-  }
+  // A small floating widget that showcases one specific client project,
+  // Mittler Senior Technology. All numbers come from that case study only.
+  // Nothing here makes any claim about the site the widget is loaded on.
 
   var widget = document.createElement('aside');
   widget.className = 'co2-widget';
-  widget.setAttribute('aria-label', 'Carbon savings on this site');
+  widget.setAttribute('aria-label', 'Sustainability case study');
   widget.innerHTML =
     '<button class="co2-launcher" type="button" aria-expanded="false" aria-controls="co2Panel">' +
       '<svg class="co2-launcher-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96c1.4 9.3-3.6 15.8-8.2 17.04Z"/>' +
         '<path d="M2 21c0-3 1.85-5.36 5.08-6"/>' +
       '</svg>' +
-      '<span class="co2-launcher-label">' +
-        '<span class="co2-launcher-label-prefix">Saved </span>' +
-        '<span data-co2-pill class="co2-launcher-num">0 mg</span>' +
-      '</span>' +
+      '<span class="co2-launcher-label co2-launcher-label--long">Sustainability case study</span>' +
+      '<span class="co2-launcher-label co2-launcher-label--short">Case study</span>' +
     '</button>' +
     '<div class="co2-panel" id="co2Panel" hidden>' +
       '<button class="co2-close" type="button" aria-label="Close">×</button>' +
-      '<p class="co2-eyebrow">CO₂ saved this session</p>' +
-      '<p class="co2-figure-saved" aria-live="polite"><span data-co2-saved>0 mg</span></p>' +
-      '<p class="co2-figure-note">…and counting, since you started browsing this site.</p>' +
+      '<p class="co2-eyebrow">Case study · Mittler Senior Technology</p>' +
+      '<p class="co2-task">A nonprofit that teaches seniors how to use technology, run by students. I rebuilt their website to be much lighter on the planet. Same content, same features, a small fraction of the footprint.</p>' +
+      '<div class="co2-headline" aria-hidden="true">' +
+        '<span class="co2-headline-num" data-co2-headline>0</span>' +
+        '<span class="co2-headline-unit">%</span>' +
+      '</div>' +
+      '<p class="co2-headline-caption"><strong>less CO<sub>2</sub></strong> per page visit, after I rebuilt the site.</p>' +
       '<div class="co2-compare">' +
         '<div class="co2-compare-row">' +
-          '<span class="co2-compare-label">A typical site would have used</span>' +
-          '<span class="co2-compare-value" data-co2-typical>0 g</span>' +
+          '<span class="co2-compare-label">Old site, per visit</span>' +
+          '<span class="co2-compare-value">5.31 g <span class="co2-rating" title="Website Carbon grade F">F</span></span>' +
         '</div>' +
         '<div class="co2-compare-row">' +
-          '<span class="co2-compare-label">This page actually used</span>' +
-          '<span class="co2-compare-value co2-compare-value--actual" data-co2-actual>0 mg</span>' +
+          '<span class="co2-compare-label">New site, per visit</span>' +
+          '<span class="co2-compare-value co2-compare-value--actual">0.10 g <span class="co2-rating co2-rating--good" title="Website Carbon grade B">B</span></span>' +
         '</div>' +
       '</div>' +
-      '<div class="co2-scale">' +
-        '<p class="co2-scale-title">Benchmark · Mittler Senior Technology</p>' +
-        '<ul class="co2-scale-list">' +
-          '<li><strong>98%</strong> less CO₂, energy, and water per visit — <strong>F → B</strong> Website Carbon rating.</li>' +
-          '<li>At 100k visits a year: <strong>6.25 t</strong> of CO₂ avoided — the work of <strong>~280 trees</strong>.</li>' +
-          '<li><strong>16,320 kWh</strong> of electricity saved — roughly two BC homes for a year.</li>' +
-        '</ul>' +
-      '</div>' +
-      '<p class="co2-fineprint">Methodology via <a href="https://www.websitecarbon.com" target="_blank" rel="noopener">Website Carbon</a> · case study at <a href="portfolio/mittler-senior-technology.html">/portfolio/mittler-senior-technology</a> · more at <a href="https://oasisofchange.org" target="_blank" rel="noopener">oasisofchange.org</a></p>' +
+      '<p class="co2-scale-title">Across 100,000 visits a year</p>' +
+      '<ul class="co2-scale-list">' +
+        '<li><strong>6.25 tonnes</strong> of CO<sub>2</sub> kept out of the air, every year.</li>' +
+        '<li>About <strong>280 trees</strong> worth of yearly absorption, saved.</li>' +
+        '<li><strong>16,000 kWh</strong> of electricity saved, about two BC homes for a year.</li>' +
+      '</ul>' +
+      '<p class="co2-cta"><a href="portfolio/mittler-senior-technology.html">Read the full case study →</a></p>' +
+      '<p class="co2-fineprint">Carbon measured with <a href="https://www.websitecarbon.com" target="_blank" rel="noopener">Website Carbon</a>. Built through my nonprofit, <a href="https://oasisofchange.org" target="_blank" rel="noopener">Oasis of Change</a>.</p>' +
     '</div>';
   document.body.appendChild(widget);
 
   var btn = widget.querySelector('.co2-launcher');
   var panel = widget.querySelector('.co2-panel');
   var close = widget.querySelector('.co2-close');
-  var pillNumEl = widget.querySelector('[data-co2-pill]');
-  var savedEl = widget.querySelector('[data-co2-saved]');
-  var typicalEl = widget.querySelector('[data-co2-typical]');
-  var actualEl = widget.querySelector('[data-co2-actual]');
+  var headlineEl = widget.querySelector('[data-co2-headline]');
 
   // The case-study link is relative to the site root. Nested pages
-  // (e.g. /portfolio/something) need a "../" prefix.
-  var caseStudyLink = widget.querySelector('.co2-fineprint a[href$="mittler-senior-technology.html"]');
+  // (/portfolio/*, /writing/*) need a "../" prefix.
+  var caseStudyLink = widget.querySelector('a[href$="mittler-senior-technology.html"]');
   if (caseStudyLink) {
     var path = window.location.pathname;
     if (/\/(portfolio|writing)\//.test(path)) {
@@ -105,29 +64,31 @@
     }
   }
 
-  function render() {
-    pillNumEl.textContent = fmt(liveSaved());
-    if (!panel.hidden) {
-      savedEl.textContent = fmt(liveSaved());
-      typicalEl.textContent = fmt(liveTypical());
-      actualEl.textContent = fmt(liveActual());
-    }
-  }
-  function persist() {
-    try { sessionStorage.setItem(STORAGE_KEY, liveSaved().toString()); } catch (_) { /* ignore */ }
-  }
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasAnimated = false;
 
-  render();
-  // 1 s tick keeps the pill alive without burning battery. RAF would be smoother
-  // but most users will look at the number, not stare at it animate.
-  var tickInterval = setInterval(render, 1000);
-  var persistInterval = setInterval(persist, 5000);
-  window.addEventListener('pagehide', persist);
+  function animateHeadline() {
+    if (hasAnimated) return;
+    hasAnimated = true;
+    if (prefersReducedMotion) {
+      headlineEl.textContent = '98';
+      return;
+    }
+    var start = performance.now();
+    var duration = 900;
+    function step(now) {
+      var t = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - t, 3);
+      headlineEl.textContent = Math.round(98 * eased);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
 
   function open() {
     panel.hidden = false;
     btn.setAttribute('aria-expanded', 'true');
-    render();
+    animateHeadline();
   }
   function shut() {
     panel.hidden = true;
