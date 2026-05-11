@@ -313,33 +313,34 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .co2-launcher {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.7rem 1.15rem;
-  background: var(--green-900);
-  color: #fff;
-  border: none;
-  border-radius: 999px;
+  gap: 0.55rem;
+  padding: 0.6rem 1.1rem;
+  background: #fff;
+  color: var(--green-900);
+  border: 1px solid var(--green-100);
+  border-radius: 6px;
   font: inherit;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(12, 31, 23, 0.18);
-  transition: background 150ms, transform 150ms, box-shadow 150ms;
+  box-shadow: 0 4px 14px rgba(12, 31, 23, 0.08);
+  transition: background 150ms, transform 150ms, box-shadow 150ms, border-color 150ms;
 }
 .co2-launcher:hover {
-  background: var(--ink);
+  background: var(--green-50);
+  border-color: var(--green-700);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(12, 31, 23, 0.22);
+  box-shadow: 0 6px 18px rgba(12, 31, 23, 0.12);
 }
 .co2-launcher:focus-visible {
   outline: 2px solid var(--green-700);
   outline-offset: 3px;
 }
 .co2-launcher-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.05rem;
+  height: 1.05rem;
   flex-shrink: 0;
-  color: var(--green-100);
+  color: var(--green-700);
 }
 .co2-launcher-label--short { display: none; }
 
@@ -348,8 +349,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   bottom: calc(100% + 0.85rem);
   left: 0;
   width: min(22rem, calc(100vw - 2rem));
-  max-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 9rem);
   overflow-y: auto;
+  overscroll-behavior: contain;
   background: #fff;
   border: 1px solid var(--rule);
   border-radius: 8px;
@@ -510,26 +512,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .co2-scale-list strong { color: var(--ink); }
 
 .co2-cta {
-  margin: 0 0 0.65rem;
+  margin: 0;
   font-size: 0.88rem;
 }
 .co2-cta a {
   color: var(--green-700);
   font-weight: 500;
 }
-.co2-fineprint {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.66rem;
-  letter-spacing: 0.03em;
-  color: var(--ink-soft);
-  margin: 0;
-  line-height: 1.6;
-}
-.co2-fineprint a {
-  color: var(--ink-soft);
-  text-decoration-color: var(--rule);
-}
-.co2-fineprint a:hover { color: var(--green-700); }
 
 @media (max-width: 480px) {
   .co2-panel {

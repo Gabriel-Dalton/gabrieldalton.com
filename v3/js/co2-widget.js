@@ -12,12 +12,12 @@
   widget.setAttribute('aria-label', 'Sustainability case study');
   widget.innerHTML =
     '<button class="co2-launcher" type="button" aria-expanded="false" aria-controls="co2Panel">' +
+      '<span class="co2-launcher-label co2-launcher-label--long">Sustainability case study</span>' +
+      '<span class="co2-launcher-label co2-launcher-label--short">Case study</span>' +
       '<svg class="co2-launcher-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
         '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96c1.4 9.3-3.6 15.8-8.2 17.04Z"/>' +
         '<path d="M2 21c0-3 1.85-5.36 5.08-6"/>' +
       '</svg>' +
-      '<span class="co2-launcher-label co2-launcher-label--long">Sustainability case study</span>' +
-      '<span class="co2-launcher-label co2-launcher-label--short">Case study</span>' +
     '</button>' +
     '<div class="co2-panel" id="co2Panel" hidden>' +
       '<button class="co2-close" type="button" aria-label="Close">×</button>' +
@@ -45,7 +45,6 @@
         '<li><strong>16,000 kWh</strong> of electricity saved, about two BC homes for a year.</li>' +
       '</ul>' +
       '<p class="co2-cta"><a href="portfolio/mittler-senior-technology.html">Read the full case study →</a></p>' +
-      '<p class="co2-fineprint">Carbon measured with <a href="https://www.websitecarbon.com" target="_blank" rel="noopener">Website Carbon</a>. Built through my nonprofit, <a href="https://oasisofchange.org" target="_blank" rel="noopener">Oasis of Change</a>.</p>' +
     '</div>';
   document.body.appendChild(widget);
 
