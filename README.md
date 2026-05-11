@@ -6,63 +6,46 @@ Source for [gabrieldalton.com](https://gabrieldalton.com). Static HTML/CSS/JS �
 
 ```
 .
-├── v2/    ← active site (deployed)
-└── v1/    ← archived snapshot of the previous design
+├── index.html, *.html, css/, js/, img/, ...   ← current site (v3)
+└── archive/
+    ├── v1/    ← frozen snapshot of the original design
+    └── v2/    ← frozen snapshot of the previous design
 ```
 
-`v2/` is the current production site. `v1/` is a frozen copy of the previous design (the post-DashNex cleanup) kept for reference and roll-back if ever needed.
+The current site lives at the repo root. `archive/v1/` and `archive/v2/` are frozen copies of earlier designs, kept for reference and roll-back if ever needed.
 
-## Deploying from `v2/`
+> **Vercel deployment note:** If the Vercel project's **Root Directory** is still set to `v2`, update it to the repo root (blank/`./`) under **Settings → General → Root Directory** so the new site at the root is served.
 
-Vercel deploys from the project's **Root Directory**. Set it once:
-
-1. Go to the Vercel dashboard → this project → **Settings → General → Root Directory**.
-2. Click **Edit**, set the root directory to `v2`, and save.
-3. The next deploy will serve `v2/` as `/`. Everything inside (HTML, `css/`, `js/`, `img/`) becomes available at the site root. PDF letters / certificates are not stored locally — they're served from `https://assets.gabrieldalton.com/References/`.
-
-`v2/vercel.json` provides clean URLs (`/writing` → `writing.html`) and the 301 short-link redirects (`/freewebsite`, `/translink`, `/book`, etc.).
-
-## What lives where in `v2/`
+## What lives where
 
 ```
-v2/
-├── index.html                   Home — hero, working-on, about, speaking preview, writing preview, contact CTA
-├── speaking.html                Speaking page — bio, TEDx feature, topics, talks, inquiry CTA
-├── writing.html                 Writing index with category filter
+.
+├── index.html                   Home
+├── about.html                   About
+├── speaking.html                Speaking
+├── writing.html                 Writing index
 ├── writing/                     Blog post pages (one HTML file per post)
-├── references.html              References & resources hub (PDFs, quotes, citations, links)
-├── contact.html                 Custom secure contact form (honeypot, time-trap, rate-limit, email autofill)
-├── headshots.html               Press headshots
+├── portfolio.html               Portfolio index
+├── portfolio/                   Individual project pages
+├── cv.html                      CV
+├── contact.html                 Contact form
 ├── message-sent.html            Form thank-you page
-├── under-maintenance.html       Maintenance placeholder
 ├── css/main.css                 Design system
-├── css/references.css           References-page modal styles
-├── js/main.js                   Shared script (filters, search, year stamps, form validation, nav active state)
-├── js/contact.js                Contact form: autofill, validation, time-trap, rate-limit, security
-├── js/references.js             References data + PDF modal
+├── js/contact.js                Contact form behaviour
+├── js/newsletter-widget.js      Newsletter widget
 ├── img/                         Photos, logos, icons, project thumbnails
-│   └── headshot.jpg             ★ Primary press headshot — 2.5 MB, 300 DPI
-├── (no local files/)            PDFs served from https://assets.gabrieldalton.com/References/
-├── vercel.json                  Vercel cleanUrls + redirects
+│   ├── favicon.svg
+│   ├── headshot.jpg             Primary press headshot
+│   ├── logos/
+│   └── projects/
 ├── robots.txt
-└── sitemap.xml
+├── sitemap.xml
+└── archive/                     Frozen previous designs (v1, v2)
 ```
-
-## Updating the headshot
-
-The official press headshot is `v2/img/headshot.jpg` (2.5 MB JPEG, 300 DPI). To replace it, save the new file at exactly that path. Every page that displays the headshot reads from there.
-
-## Updating the TEDx video URL
-
-Two `<a ... data-tedx-url>` elements are wired up to point at the TEDx talk:
-- the featured-video card on `v2/speaking.html`
-- the small "Watch ↗" link in the speaking talks list (both speaking and home pages)
-
-Both currently point at `#`. When the video is live, find-and-replace `href="#" data-tedx-url` with the real URL across `v2/speaking.html` and `v2/index.html`.
 
 ## External dependencies
 
 - **Google Fonts** — Bricolage Grotesque, Hanken Grotesk, IBM Plex Mono.
 - **FormSubmit** — handles the contact form relay; the destination email is hashed in the form `action` and never exposed in source.
 
-Everything else (CSS, JS, images, PDFs) is local.
+Everything else (CSS, JS, images) is local.
