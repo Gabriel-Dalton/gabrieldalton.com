@@ -302,6 +302,234 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   }
 }
 
+/* Sustainability case-study floating widget (bottom-left) */
+.co2-widget {
+  position: fixed;
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  left: clamp(1rem, 3vw, 1.5rem);
+  z-index: 60;
+  font-family: inherit;
+}
+.co2-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1.1rem;
+  background: #fff;
+  color: var(--green-900);
+  border: 1px solid var(--green-100);
+  border-radius: 6px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(12, 31, 23, 0.08);
+  transition: background 150ms, transform 150ms, box-shadow 150ms, border-color 150ms;
+}
+.co2-launcher:hover {
+  background: var(--green-50);
+  border-color: var(--green-700);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(12, 31, 23, 0.12);
+}
+.co2-launcher:focus-visible {
+  outline: 2px solid var(--green-700);
+  outline-offset: 3px;
+}
+.co2-launcher-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  color: var(--green-700);
+}
+.co2-launcher-label--short { display: none; }
+
+.co2-panel {
+  position: absolute;
+  bottom: calc(100% + 0.85rem);
+  left: 0;
+  width: min(22rem, calc(100vw - 2rem));
+  max-height: calc(100vh - 9rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  box-shadow: 0 12px 36px rgba(12, 31, 23, 0.14);
+  animation: co2PanelIn 200ms ease-out;
+}
+@keyframes co2PanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.co2-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.co2-close:hover { color: var(--ink); background: var(--rule); }
+
+.co2-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin: 0 0 0.7rem;
+  line-height: 1.4;
+}
+.co2-task {
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.co2-headline {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.1rem;
+  margin: 0.25rem 0 0.25rem;
+}
+.co2-headline-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 3.4rem;
+  font-weight: 600;
+  color: var(--green-700);
+  letter-spacing: -0.025em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.co2-headline-unit {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--green-700);
+  line-height: 1;
+}
+.co2-headline-caption {
+  margin: 0 0 1.1rem;
+  font-size: 0.88rem;
+  color: var(--ink-mid);
+  text-align: center;
+  line-height: 1.45;
+}
+.co2-headline-caption strong { color: var(--ink); }
+
+.co2-compare {
+  margin: 0 0 1.1rem;
+  padding: 0.75rem 0.95rem;
+  background: var(--green-50);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.co2-compare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+.co2-compare-label { color: var(--ink-mid); }
+.co2-compare-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.co2-compare-value--actual { color: var(--green-700); }
+.co2-rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.co2-rating--good { background: var(--green-700); }
+
+.co2-scale-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin: 0 0 0.55rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.95rem;
+}
+.co2-scale-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.co2-scale-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.45;
+}
+.co2-scale-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.1rem;
+  top: 0;
+  color: var(--green-700);
+  font-weight: 700;
+}
+.co2-scale-list strong { color: var(--ink); }
+
+.co2-cta {
+  margin: 0;
+  font-size: 0.88rem;
+}
+.co2-cta a {
+  color: var(--green-700);
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .co2-panel {
+    width: calc(100vw - 2rem);
+    margin-left: -0.5rem;
+  }
+  .co2-launcher { padding: 0.6rem 1rem; font-size: 0.88rem; }
+  .co2-launcher-label--long { display: none; }
+  .co2-launcher-label--short { display: inline; }
+}
+
 /* supascribe (substack) embed — green theme to match the rest */
 /* Doubled attribute selector below = specificity (0,2,1)+ to outweigh Supascribe's
    class-based rules that load after main.css. */
