@@ -302,6 +302,194 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   }
 }
 
+/* CO₂ savings floating widget — mirrors the newsletter widget on the left */
+.co2-widget {
+  position: fixed;
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  left: clamp(1rem, 3vw, 1.5rem);
+  z-index: 60;
+  font-family: inherit;
+}
+.co2-launcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  background: var(--green-900);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(12, 31, 23, 0.18);
+  transition: background 150ms, transform 150ms, box-shadow 150ms;
+  max-width: 14rem;
+}
+.co2-launcher:hover {
+  background: var(--ink);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(12, 31, 23, 0.22);
+}
+.co2-launcher:focus-visible {
+  outline: 2px solid var(--green-700);
+  outline-offset: 3px;
+}
+.co2-launcher-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--green-100);
+}
+.co2-launcher-label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+.co2-launcher-num {
+  font-variant-numeric: tabular-nums;
+  min-width: 3.2em;
+  text-align: left;
+}
+
+.co2-panel {
+  position: absolute;
+  bottom: calc(100% + 0.85rem);
+  left: 0;
+  width: min(22rem, calc(100vw - 2rem));
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem 1.25rem;
+  box-shadow: 0 12px 36px rgba(12, 31, 23, 0.14);
+  animation: co2PanelIn 200ms ease-out;
+}
+@keyframes co2PanelIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.co2-close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.5rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1.15rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.co2-close:hover { color: var(--ink); background: var(--rule); }
+
+.co2-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin: 0 0 0.55rem;
+}
+.co2-figure-saved {
+  margin: 0 0 0.2rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: var(--green-700);
+  letter-spacing: -0.015em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.co2-figure-note {
+  margin: 0 0 1.1rem;
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+}
+.co2-compare {
+  margin: 0 0 1.1rem;
+  padding: 0.75rem 0.95rem;
+  background: var(--green-50);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.co2-compare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+}
+.co2-compare-label { color: var(--ink-mid); }
+.co2-compare-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.co2-compare-value--actual { color: var(--green-700); }
+
+.co2-scale {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.9rem;
+  margin: 0 0 0.6rem;
+}
+.co2-scale-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  margin: 0 0 0.55rem;
+}
+.co2-scale-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.co2-scale-list li {
+  font-size: 0.85rem;
+  color: var(--ink-mid);
+  line-height: 1.45;
+}
+.co2-scale-list strong { color: var(--ink); }
+.co2-fineprint {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  margin: 0.85rem 0 0;
+  line-height: 1.6;
+}
+.co2-fineprint a {
+  color: var(--ink-soft);
+  text-decoration-color: var(--rule);
+}
+.co2-fineprint a:hover { color: var(--green-700); }
+
+@media (max-width: 480px) {
+  .co2-panel {
+    width: calc(100vw - 2rem);
+    margin-left: -0.5rem;
+  }
+}
+@media (max-width: 360px) {
+  .co2-launcher-label-prefix { display: none; }
+}
+
 /* supascribe (substack) embed — green theme to match the rest */
 /* Doubled attribute selector below = specificity (0,2,1)+ to outweigh Supascribe's
    class-based rules that load after main.css. */
